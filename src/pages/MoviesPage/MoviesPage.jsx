@@ -4,7 +4,7 @@ const MoviesPage = () => {
   };
   return (
     <div>
-      <Searchbar onSubmit={handleSubmit} />
+      <h1>MoviesPage</h1>
     </div>
   );
 };

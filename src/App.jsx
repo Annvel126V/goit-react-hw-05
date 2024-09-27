@@ -1,5 +1,5 @@
 import { Routes, Route, NavLink } from "react-router-dom";
-import s from "./App.css";
+import s from "./App.module.css";
 import clsx from "clsx";
 import { lazy } from "react";
 
