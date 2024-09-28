@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { fetchMovieCast, getMovieImgUrl } from "../../servises.api.js";
 const MovieCast = () => {
   const { movieId } = useParams();
-  const [cast, setCast] = useState(null);
+  const [cast, setCast] = useState([]);
 
   useEffect(() => {
     const fetchCast = async () => {
@@ -17,15 +17,15 @@ const MovieCast = () => {
     <div>
       <h2>Cast</h2>
       <ul>
-        {cast.map((cast) => (
-          <li key={cast.id}>
+        {cast.map((actor) => (
+          <li key={actor.id}>
             <img
-              src={getMovieImgUrl(cast.profile_path)}
-              alt={cast.name}
-              width={150}
+              src={getMovieImgUrl(actor.profile_path)}
+              alt={actor.name}
+              width={100}
             />
-            <p>{cast.name}</p>
-            <p>Character: {cast.character}</p>
+            <p>{actor.name}</p>
+            <p>Character: {actor.character}</p>
           </li>
         ))}
       </ul>
