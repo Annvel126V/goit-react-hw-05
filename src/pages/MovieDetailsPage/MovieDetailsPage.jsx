@@ -1,5 +1,5 @@
 import { useParams, useLocation, useNavigate, Outlet } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { fetchMovieDetails, getMovieImgUrl } from "../../servises.api";
 
 const MovieDetailsPage = () => {
@@ -27,7 +27,9 @@ const MovieDetailsPage = () => {
       <button onClick={goBack}>Go back</button>
       <h1>{movie.title}</h1>
       <img src={getMovieImgUrl(movie.poster_path)} alt={movie.title} />
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

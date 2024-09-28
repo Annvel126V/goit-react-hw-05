@@ -7,12 +7,10 @@ const BASE_URL = "https://api.themoviedb.org/3/";
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w500/";
 
-axios.defaults.headers.common["Authorization"] = "Bearer ${API_KEY}";
+axios.defaults.headers.common["Authorization"] = `Bearer ${API_KEY}`;
 
 export const fethchTrendingMovies = async () => {
-  const { data } = await axios.get(
-    `${BASE_URL}trending/movie/day?api_key=${API_KEY}`
-  );
+  const { data } = await axios.get(`${BASE_URL}trending/movie/day`);
   return data.results;
 };
 
@@ -38,7 +36,7 @@ export const fetchMovieDetails = async (movieId) => {
 };
 
 export const fetchMovieCast = async (movieId) => {
-  const { data } = await axios.get(`${BASE_URL}movie/${movieId}/credits`);
+  const { data } = await axios.get(`${BASE_URL}movie/${movieId}/cast`);
   return data.cast;
 };
 
@@ -47,7 +45,7 @@ export const fetchMovieReviews = async (movieId) => {
   return data.results;
 };
 
-export const getMovieImg = (path) =>
+export const getMovieImgUrl = (path) =>
   path
     ? `${IMG_BASE_URL}${path}`
     : "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
