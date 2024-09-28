@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
+import { fethchTrendingMovies } from "../../servises.api";
+import MovieList from "../../components/MovieList/MovieList";
+
 const HomePage = () => {
-  return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
-  );
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    const getMovies = async () => {
+      const data = await fethchTrendingMovies();
+      setMovies(data);
+    };
+    getMovies();
+  }, []);
+  return <MovieList movies={movies} />;
 };
 
 export default HomePage;

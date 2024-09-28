@@ -1,0 +1,8 @@
+.link {
+  color: rgb(127, 172, 240);
+  font-weight: bold;
+  margin: 15px;
+}
+.activeLink {
+  color: rgb(161, 181, 241);
+}

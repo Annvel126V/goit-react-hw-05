@@ -1,26 +1,16 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+} */
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  color: white;
-  font-weight: 700;
-  background-color: cadetblue;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.link {
-  color: white;
-  font-weight: bold;
-}
-.activeLink {
-  color: royalblue;
-}
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -54,4 +44,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
