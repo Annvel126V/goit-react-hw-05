@@ -1,6 +1,7 @@
 import { useParams, useLocation, useNavigate, Outlet } from "react-router-dom";
 import { Suspense, useEffect, useState } from "react";
-import { fetchMovieDetails, getMovieImgUrl } from "../../servises.api";
+import { fetchMovieDetails, getMovieImgUrl } from "../../servises.api.js";
+import Loader from "../../components/Loader/Loader";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
@@ -20,7 +21,12 @@ const MovieDetailsPage = () => {
     fetchDetalis();
   }, [movieId]);
 
-  if (!movie) return <div>Loading...</div>;
+  if (!movie)
+    return (
+      <div>
+        <Loader />
+      </div>
+    );
 
   return (
     <div>
