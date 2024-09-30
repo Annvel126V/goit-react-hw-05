@@ -16,11 +16,16 @@
 a {
   font-weight: bold;
 
-  color: rgb(192, 225, 247);
+  color: rgb(9, 37, 80);
   text-decoration: inherit;
+  border: solid 2px rgb(192, 225, 247);
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: rgb(192, 225, 247);
 }
 a:hover {
-  color: rgb(245, 247, 250);
+  background-color: rgb(70, 139, 241);
+  color: seashell;
 }
 
 body {

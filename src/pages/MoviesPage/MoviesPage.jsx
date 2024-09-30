@@ -9,7 +9,7 @@ const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState([]);
   const query = searchParams.get("query") || "";
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -17,17 +17,23 @@ const MoviesPage = () => {
       return;
     }
     const fetchMovies = async () => {
+      setIsLoading(true);
+      setError(null);
       try {
-        setIsLoading(true);
         const results = await searchMovies(query);
-        setMovies(results);
-        setError(false);
+        if (results.length === 0) {
+          setError("No movies found");
+          setMovies([]);
+        } else {
+          setMovies(results);
+        }
       } catch (error) {
         setError(error.message);
       } finally {
         setIsLoading(false);
       }
     };
+
     fetchMovies();
   }, [query]);
 
@@ -48,13 +54,16 @@ const MoviesPage = () => {
           defaultValue={query}
           placeholder="Search movie"
         />
-        {error && <NotFoundPage />}
-        {isLoading && <Loader />}
+
         <button className={s.btn} type="submit">
           Search
         </button>
       </form>
-      <MovieList movies={movies} />
+      {isLoading && <Loader />}
+      {error && <NotFoundPage error={error} />}
+      {!isLoading && !error && movies.length > 0 && (
+        <MovieList movies={movies} />
+      )}
     </div>
   );
 };
