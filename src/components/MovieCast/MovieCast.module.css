@@ -1,0 +1,35 @@
+.title {
+  text-align: center;
+  color: rgb(192, 225, 247);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.list {
+  padding: 0;
+}
+
+.item {
+  display: flex;
+
+  align-items: center;
+  margin: 15px;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+
+  color: rgb(149, 153, 153);
+}
+
+.img {
+  float: left;
+  margin-right: 20px;
+}

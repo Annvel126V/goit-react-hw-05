@@ -1,0 +1,25 @@
+.title {
+  color: rgb(149, 153, 153);
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.author {
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 20px;
+  color: rgb(149, 153, 153);
+  font-family: italic;
+  font-style: italic;
+}

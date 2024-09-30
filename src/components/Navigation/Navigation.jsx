@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import clsx from "clsx";
+import { GiFilmProjector } from "react-icons/gi";
 import s from "./Navigation.module.css";
 
 const buildLinkClass = ({ isActive }) => {
@@ -7,8 +8,10 @@ const buildLinkClass = ({ isActive }) => {
 };
 const Navigation = () => {
   return (
-    <div>
-      <nav>
+    <div className={s.container}>
+      <span className={s.logo}>Cinema</span>
+      <GiFilmProjector className={s.icon} />
+      <nav className={s.nav}>
         <NavLink className={buildLinkClass} to="/">
           Home
         </NavLink>
