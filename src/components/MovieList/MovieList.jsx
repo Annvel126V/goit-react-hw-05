@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { IoHeartSharp } from "react-icons/io5";
 import s from "./MovieList.module.css";
 
 function MovieList({ movies }) {
+  const location = useLocation();
+
   const defaultImg =
     "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
 
@@ -10,7 +12,12 @@ function MovieList({ movies }) {
     <ul className={s.list}>
       {movies.map((movie) => (
         <li className={s.item} key={movie.id}>
-          <Link to={`/movies/${movie.id}`}>
+          <Link
+            to={{
+              pathname: `/movies/${movie.id}`,
+              state: { from: location },
+            }}
+          >
             <div className={s.info}>
               <img
                 className={s.img}
