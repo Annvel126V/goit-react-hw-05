@@ -9,8 +9,10 @@ const buildLinkClass = ({ isActive }) => {
 const Navigation = () => {
   return (
     <div className={s.container}>
-      <span className={s.logo}>Cinema</span>
-      <GiFilmProjector className={s.icon} />
+      <span className={s.logo}>
+        <GiFilmProjector className={s.icon} /> Cinema
+      </span>
+
       <nav className={s.nav}>
         <NavLink className={buildLinkClass} to="/">
           Home
