@@ -12,7 +12,7 @@ function MovieList({ movies }) {
     <ul className={s.list}>
       {movies.map((movie) => (
         <li className={s.item} key={movie.id}>
-          <Link to={`/movies/${movie.id}`} state={{ from: location }}>
+          <Link to={`/movies/${movie.id}`} state={location}>
             <div className={s.info}>
               <img
                 className={s.img}

@@ -15,7 +15,7 @@ const MovieDetailsPage = () => {
   const [movie, setMovie] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
-  const goBackLink = useRef(location.state || "/");
+  const goBackLink = useRef(location.state ?? "/");
 
   useEffect(() => {
     const fetchDetalis = async () => {
